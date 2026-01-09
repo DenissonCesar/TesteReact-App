@@ -15,10 +15,6 @@ function Header({ title, links }) {
             ))}
           </ul>
         </nav>
-
-        <div className="header-actions">
-          <button className="login-button">Entrar</button>
-        </div>
       </div>
     </header>
   );
