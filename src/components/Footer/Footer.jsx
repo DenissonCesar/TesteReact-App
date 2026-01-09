@@ -1,12 +1,14 @@
-import '../../global.css';
+import "../../global.css";
 
 function Footer() {
-  const currentYear = new Date().getFullYear;
+  
+
   return (
     <footer className="main-footer">
       <div className="footer-container">
         <div className="footer-info">
-          <p>&copy; {currentYear} Pousada. Todos os direitos reservados.</p>
+          
+          <p>&copy;Pousada. Todos os direitos reservados.</p>
         </div>
 
         <nav className="footer-socials">

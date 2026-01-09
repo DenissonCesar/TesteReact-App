@@ -1,5 +1,7 @@
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import AppRoutes from "./routes/AppRoutes.jsx";
+
 
 function App() {
   const headerLinks = [
@@ -9,19 +11,18 @@ function App() {
   ];
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
+    <div>
       <Header title="Pousada" links={headerLinks} />
 
-      <main style={{ flex: 1, padding: "2rem" }}>
-        <h2>Bem-vindo!</h2>
-        <p>Conteúdo principal do site aqui...</p>
+      <main>
+        <AppRoutes />
       </main>
 
       <Footer />
     </div>
   );
+
+
 }
 
 export default App;
