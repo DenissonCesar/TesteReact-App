@@ -1,6 +1,10 @@
 import "../../global.css";
+import { Link } from "react-router-dom";
+import { useAuth } from '../../auth/AuthContext';
 
 function Header({ title, links }) {
+  const { user, logout } = useAuth();
+
   return (
     <header className="main-header">
       <div className="header-container">
@@ -10,15 +14,13 @@ function Header({ title, links }) {
           <ul>
             {links.map((link, index) => (
               <li key={index}>
-                <a href={link.url}>{link.label}</a>
+                <Link to={link.url}>{link.label}</Link>
               </li>
             ))}
           </ul>
-        </nav>
 
-        <div className="header-actions">
-          <button className="login-button">Entrar</button>
-        </div>
+          {user && <button onClick={logout}>Sair</button>}
+        </nav>
       </div>
     </header>
   );
