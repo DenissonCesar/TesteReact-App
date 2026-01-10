@@ -29,12 +29,6 @@ html, body {
 
 /* HEADER */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .main-header {
   width: 100%;            /* Ocupa toda a largura lateral */
   background-color: #20232a;
@@ -147,7 +141,56 @@ html, body {
   opacity: 0.8;
 }
 
+/* FOOTER */
 
+.main-footer {
+  width: 100%;
+  background-color: #20232a; /* Mesma cor do Header para manter o padrão */
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto; /* Empurra o footer para o final caso use flex no container pai */
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: #abb2bf;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.footer-socials a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
 
 /* 3. ESTRUTURA DE LAYOUT (STICKY FOOTER) */
 #root{
@@ -305,4 +348,124 @@ button:hover {
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+
+/* HOME */
+
+/* 8. ESTILO ESPECÍFICO DA HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 4rem; /* Espaço para não ficar colado no header */
+}
+
+.home h2 {
+  font-size: 2.8rem;
+  color: #61dafb;
+  margin-bottom: 0.5rem;
+}
+
+.home p {
+  font-size: 1.2rem;
+  color: #abb2bf;
+  margin-bottom: 3rem;
+}
+
+.home-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Reutilizando e refinando o estilo dos botões da pousada */
+.btn {
+  min-width: 180px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #61dafb;
+  color: #20232a;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4fa8c7;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #61dafb;
+  border: 2px solid #61dafb;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(97, 218, 251, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .home h2 {
+    font-size: 2rem;
+  }
+  .home-actions {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+/* LOGIN E REGISTER */
+
+.auth-container {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.auth-container input,
+.auth-container select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+}
+
+.auth-error {
+  color: red;
+  text-align: center;
+}
+
+.auth-hint {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
 }
