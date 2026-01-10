@@ -10,16 +10,20 @@ function App() {
   ];
 
   return (
-    <>
+    <div>
       <Header title="Pousada" links={headerLinks} />
+
       
       <main>
         <AppRoutes />
       </main>
 
       <Footer />
+
     </>
   );
+
+
 }
 
 export default App;

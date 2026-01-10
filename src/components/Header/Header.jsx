@@ -8,8 +8,9 @@ function Header({ title, links }) {
   return (
     <header className="main-header">
       <div className="header-container">
-        <h1 className="header-logo">{title}</h1>
-
+        <Link to="/" className="header-logo-link">
+          <h1 className="header-logo">{title}</h1>
+        </Link>
         <nav className="header-nav">
           <ul>
             {links.map((link, index) => (

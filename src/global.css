@@ -30,48 +30,115 @@ html, body {
 /* HEADER */
 
 .main-header {
+  width: 100%;            /* Ocupa toda a largura lateral */
   background-color: #20232a;
   color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0.5rem 2rem;
+  position: sticky;       /* Faz o menu "grudar" no topo ao rolar a página */
+  top: 0;
+  z-index: 1000;          /* Garante que fique por cima de outros elementos */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1200px;      /* Largura máxima para o conteúdo não espalhar demais */
+  margin: 0 auto;         /* Centraliza o container */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Logo na esquerda, Nav no meio, Botão na direita */
   align-items: center;
-  font-size: 12px;
+  height: 60px;           /* Altura fixa para o header */
 }
 
 .header-logo {
-  font-size: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #61dafb;         /* Cor clássica do React */
 }
 
 .header-nav ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 30px;              /* Espaço entre os links */
 }
 
 .header-nav a {
-  color: #61dafb;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
 .header-nav a:hover {
-  text-decoration: underline;
+  color: #61dafb;
 }
 
+/* FOOTER */
+
+.main-footer {
+  width: 100%;
+  background-color: #20232a; /* Mesma cor do Header para manter o padrão */
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto; /* Empurra o footer para o final caso use flex no container pai */
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: #abb2bf;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.footer-socials a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+
+/* LOGIN */ 
+
 .login-button {
-  background: #61dafb;
+  background-color: #61dafb;
+  color: #20232a;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.login-button:hover {
+  opacity: 0.8;
 }
 
 /* FOOTER */
