@@ -18,9 +18,8 @@ function App() {
         <AppRoutes />
       </main>
 
-      <Footer />
 
-    </>
+    </div>
   );
 
 
